@@ -1,5 +1,5 @@
-const greet = () => {
-    console.log("Hello WDC 2017!");
-};
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
 
-greet();
+ReactDOM.render(<App />, document.getElementById("app"));

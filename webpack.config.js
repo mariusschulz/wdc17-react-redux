@@ -1,5 +1,4 @@
 const path = require("path");
-const webpack = require("webpack");
 
 // For more information on how to configure webpack,
 // see https://webpack.js.org/guides/getting-started
@@ -19,6 +18,7 @@ module.exports = {
         rules: [
             {
                 test: /\.jsx?$/,
+                include: [path.resolve(__dirname, "src")],
                 use: {
                     loader: "babel-loader"
                 }
