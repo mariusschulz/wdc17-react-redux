@@ -7,7 +7,7 @@ class TodoForm extends React.Component {
 
     render() {
         return (
-            <form>
+            <form onSubmit={e => this.createTodo(e)}>
                 <input
                     value={this.state.text}
                     onChange={e => this.updateText(e)}
@@ -16,6 +16,17 @@ class TodoForm extends React.Component {
                 />
             </form>
         );
+    }
+
+    createTodo(e) {
+        e.preventDefault();
+        const newTodo = {
+            id: Date.now(),
+            text: this.state.text,
+            completed: false
+        };
+        this.props.onCreateTodo(newTodo);
+        this.setState({ text: "" });
     }
 
     updateText(e) {
